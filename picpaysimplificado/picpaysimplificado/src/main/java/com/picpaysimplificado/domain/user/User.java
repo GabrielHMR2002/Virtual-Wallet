@@ -28,5 +28,7 @@ public class User {
     private String email;
     private String password;
     private BigDecimal balance;
+
+    @Enumerated(EnumType.STRING)
     private UserType userType;
 }
