@@ -26,6 +26,6 @@ public class NotificationService {
 //
 //        }
 
-        System.out.println("Notificação enviada para o usuário");
+        System.out.println("Notification sent to the user.");
     }
 }

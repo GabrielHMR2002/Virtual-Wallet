@@ -39,7 +39,7 @@ public class TransactionService {
 
         boolean isAuthorized = this.authorizeTransaction(sender, transaction.value());
         if (!isAuthorized) {
-            throw new Exception("Transação não Autorizada");
+            throw new Exception("Unauthorized Transaction");
         }
         Transaction newTransaction = new Transaction();
         newTransaction.setAmount(transaction.value());
@@ -53,8 +53,8 @@ public class TransactionService {
         this.transactionRepository.save(newTransaction);
         this.userService.saveUser(sender);
         this.userService.saveUser(reciever);
-        this.notificationService.sendNotification(sender,"Transação realizada com sucesso");
-        this.notificationService.sendNotification(reciever, "Transação recebida com sucesso");
+        this.notificationService.sendNotification(sender,"Transaction successfully completed");
+        this.notificationService.sendNotification(reciever, "Transaction received successfully");
 
 
         return newTransaction;
